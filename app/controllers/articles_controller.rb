@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   end
 
   get '/articles/:id' do
-    binding.pry
+    erb :'articles/show'
   end
 
 end
