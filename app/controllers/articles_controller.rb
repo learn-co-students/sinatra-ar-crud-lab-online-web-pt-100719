@@ -1,7 +1,17 @@
 class ArticlesController < ApplicationController
 
   get '/articles/new' do
-    erb :new
+    erb :'articles/new'
+  end
+
+  post '/articles' do
+    @article = Article.new(params)
+    @article.save
+    redirect "/articles/#{@article.id}"
+  end
+
+  get '/articles/:id' do
+    binding.pry
   end
 
 end
